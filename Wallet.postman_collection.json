@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "be599fcc-6d40-41c2-89f2-60226b3ec525",
+		"name": "Wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "wallet-register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWhkaUB5YWhvby5jb20iLCJpYXQiOjE3MjkyNzM1NzIsImV4cCI6MTcyOTMwOTU3Mn0.zwgtMCR1Acpa8tFsZc5Zzf3rh5U4tgBdjFdaY8q-GXg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"0987654321\",\r\n  \"name\": \"Saba\",\r\n  \"lastName\": \"Mahboob\",\r\n  \"phoneNumber\": \"09121447568\",\r\n  \"email\": \"saba.mb@example.com\",\r\n  \"password\": \"StrongP@ss1\",\r\n  \"gender\": \"FEMALE\",\r\n  \"age\": 23\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8083/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wallet-post-account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"accountNumber\": \"ACC123456789\",\r\n  \"credit\": 15000.75,\r\n  \"openDate\": \"2024-10-19\",\r\n  \"sheba\": \"IR123456789012345678901212\",\r\n  \"person\": {\r\n    \"id\": \"0987654321\"\r\n    \r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8083/api/accounts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wallet-login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"0987654321\",\r\n    \"password\":\"StrongP@ss1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8083/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wallet-get-person",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwOTg3NjU0MzIxIiwiaWF0IjoxNzI5NDI1NDM0LCJleHAiOjE3Mjk0NjE0MzR9.Se1ssr0ZvaoI5rpx-fJpEXrksbu-2P3CYPqhiPrdnI0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8083/api/persons/0987654321",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"persons",
+						"0987654321"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wallet-get-account-with-personId-and-accountId",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwOTg3NjU0MzIxIiwiaWF0IjoxNzI5NDI1NjE1LCJleHAiOjE3Mjk0NjE2MTV9.ycS400XEIl0K29IKyd0h5zGP3IFt0Obw40Aoz6_UVSc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8083/api/accounts/get?personId=0987654321&accountId=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"accounts",
+						"get"
+					],
+					"query": [
+						{
+							"key": "personId",
+							"value": "0987654321"
+						},
+						{
+							"key": "accountId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wallet-get-invoice",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwOTg3NjU0MzIxIiwiaWF0IjoxNzI5NDI2MjM3LCJleHAiOjE3Mjk0NjIyMzd9.z-0OdWd7MOUpMFUj5BH-ZdulTrq1Yn6xb3kGC5cRkEI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8083/api/transactions/get",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"transactions",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transaction-deposite",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwOTg3NjU0MzIxIiwiaWF0IjoxNzI5NDI2MjM3LCJleHAiOjE3Mjk0NjIyMzd9.z-0OdWd7MOUpMFUj5BH-ZdulTrq1Yn6xb3kGC5cRkEI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8083/api/transactions/deposit?accountId=1&amount=300",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"transactions",
+						"deposit"
+					],
+					"query": [
+						{
+							"key": "accountId",
+							"value": "1"
+						},
+						{
+							"key": "amount",
+							"value": "300"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transaction-withdraw",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwOTg3NjU0MzIxIiwiaWF0IjoxNzI5NDI1NjE1LCJleHAiOjE3Mjk0NjE2MTV9.ycS400XEIl0K29IKyd0h5zGP3IFt0Obw40Aoz6_UVSc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8083/api/transactions/withdraw?accountId=1&amount=300",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"transactions",
+						"withdraw"
+					],
+					"query": [
+						{
+							"key": "accountId",
+							"value": "1"
+						},
+						{
+							"key": "amount",
+							"value": "300"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
